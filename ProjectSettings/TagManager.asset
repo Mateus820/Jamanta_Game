@@ -14,6 +14,8 @@ TagManager:
   - UI
   - 
   - 
+  - Game
+  - Light
   - 
   - 
   - 
@@ -35,10 +37,20 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Back
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4230690817
+    locked: 0
+  - name: Stars
+    uniqueID: 409881275
+    locked: 0
+  - name: Planets
+    uniqueID: 3112891119
+    locked: 0
+  - name: Player
+    uniqueID: 1030626755
     locked: 0

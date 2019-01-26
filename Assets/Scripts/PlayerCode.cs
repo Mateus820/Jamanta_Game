@@ -7,6 +7,9 @@ public class PlayerCode : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Pool poolManager;
+
+
     private Vector2 keyInput;
 
     void Start()
@@ -17,7 +20,11 @@ public class PlayerCode : MonoBehaviour
     void Update()
     {
         keyInput.x = Input.GetAxisRaw("Horizontal");
-        keyInput.y = Input.GetAxisRaw("Vertical");
+        // keyInput.y = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetButtonDown("Space")){
+            poolManager.GetObjectPooled(transform.position);
+        }
     }
 
     void FixedUpdate() {

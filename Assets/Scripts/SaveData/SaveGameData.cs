@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveGameData : MonoBehaviour
+[System.Serializable]
+class SaveGameData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int playerPoints;
+    public float posX, posY;
 }

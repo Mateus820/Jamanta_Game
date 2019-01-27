@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlanetAtm
   - "Ch\xE3o"
+  - TiroInimigo
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Light
   - Parede
   - Bala
-  - 
+  - BalaIni
   - 
   - 
   - 

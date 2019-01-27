@@ -10,12 +10,10 @@ public class PoolBala : MonoBehaviour
     {
          rb.velocity = Vector2.up * speed;
     }
-     void OnCollisionEnter(Collision other) {
-
-         if (other.gameObject.CompareTag("Chão")){
-         this.gameObject.SetActive(false);
-         print("bateu");
-         }
+    
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Chão"))
+            this.gameObject.SetActive(false);
     }
 }
 

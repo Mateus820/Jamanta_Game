@@ -17,7 +17,7 @@ public class MovePlayer : MonoBehaviour
     {
         move = Vector2.zero;
         rb = GetComponent<Rigidbody2D>();
-         canShoot = true;
+        canShoot = true;
     }
 
     // Update is called once per frame
@@ -40,6 +40,6 @@ public class MovePlayer : MonoBehaviour
     }
 
     void FixedUpdate() {
-        rb.velocity = move;
+        rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
     }
 }

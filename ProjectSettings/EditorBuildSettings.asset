@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Joana/img/Scenes/Tela Inicial.unity
+    guid: 3d45b21cc74f78c41a44d7c2cdd6c299
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 50c0e0ff70ade1b439eea13a4dcb6ae3
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: fa624dab57b18ed43a47a9433d9859e3
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6eb418832c37a8f42bb52f3011cdc662
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: b78b0b9cd98756b4b822ba3b6f4336ac
+  - enabled: 1
+    path: Assets/Scenes/SpaceInvaders.unity
+    guid: a8a648db0f9cd2245aa9d62ff88bdcc5
+  - enabled: 1
+    path: Assets/Joana/img/Scenes/Jogo.unity
+    guid: 026fe0d23d99648418ccc0ed798e94e8
+  - enabled: 1
+    path: "Assets/Joana/img/Scenes/Cr\xE9ditos.unity"
+    guid: a356420ccbc74304db95db82798239ae
   m_configObjects: {}

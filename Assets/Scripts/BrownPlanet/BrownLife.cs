@@ -8,7 +8,7 @@ public class BrownLife : MonoBehaviour
     public int hp; 
     public Sprite[] health;
 	[SerializeField] private Image lifeIcons;
-    [SerializeField] private GameObject gameover;
+    [SerializeField] private SceneController sc;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class BrownLife : MonoBehaviour
     {
         if(hp <= 0) {
             hp = 0;
-            gameObject.SetActive(true);
+            sc.GameOver();
         }
         else if(hp > 3) hp = 3;
 

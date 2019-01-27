@@ -8,7 +8,7 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
 
-	public PlayerCode playe;
+	public PlayerCode player;
 	public Rigidbody2D playerRb;
 	public string FILE_PATH = "saveGameData.dat";
 
@@ -24,17 +24,20 @@ public class DataManager : MonoBehaviour
 	}
 
 	//Game mode to save and load;
-	void OnEnable() {
+	void Start() {
 		
 		print(PlayerPrefs.GetInt("Mode"));
 
-		if(PlayerPrefs.GetInt("Mode") == 0){
-			SaveGame();
-		}
-		else if(PlayerPrefs.GetInt("Mode") == 1){
+		if(PlayerPrefs.GetInt("Mode") == 1){
 			LoadGame();
 		}
 	}
+
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.P)){
+            SaveGame();
+        }    
+    }
 
 	//Save game in a binary file;
 	public void SaveGame()
@@ -44,24 +47,38 @@ public class DataManager : MonoBehaviour
 
 		SaveGameData save = new SaveGameData();
 
-		save.posX = playerRb.position.x;
-		save.posY = playerRb.position.y;
+        if(playerRb == null)
+            playerRb = Singleton.GetInstance.playerRb;
 
-		print(playerRb.position.x);
-		print(playerRb.position.y);
+        if(playerRb == null)
+            return;
+
+        save.posX = playerRb.position.x;
+        save.posY = playerRb.position.y;
+
+        print(playerRb.position.x);
+        print(playerRb.position.y);
 
 		bf.Serialize(file, save);
+        print("Saved");
 		file.Close();
 
 	}
 	public void LoadGame()
 	{
-		print("Loaded!");
+        print("cool");
+        if(playerRb == null)
+            playerRb = Singleton.GetInstance.playerRb;
+
+        if(playerRb == null)
+            return;
+
 		if (File.Exists(Path.Combine(Application.streamingAssetsPath, FILE_PATH))){
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Path.Combine(Application.streamingAssetsPath, FILE_PATH), FileMode.Open);
 
 			SaveGameData save = (SaveGameData) bf.Deserialize(file);
+            print("Loaded!");
 
 			file.Close();
 

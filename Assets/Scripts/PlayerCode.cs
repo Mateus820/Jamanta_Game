@@ -30,7 +30,7 @@ public class PlayerCode : MonoBehaviour
     void Update()
     {
         keyInput.x = Input.GetAxisRaw("Horizontal");
-        // keyInput.y = Input.GetAxisRaw("Vertical");
+        keyInput.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetButtonDown("Space")){
             poolManager.GetObjectPooled(transform.position);

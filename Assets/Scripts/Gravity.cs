@@ -11,7 +11,6 @@ public class Gravity : MonoBehaviour
         Vector2 bodyUp = tr.transform.up;
 
         tr.rotation = Quaternion.FromToRotation(bodyUp, targetDir) * tr.rotation;
-        print(Quaternion.FromToRotation(bodyUp, targetDir) * tr.rotation);
         rb.AddForce(targetDir * gravity * 10);
     }
 }

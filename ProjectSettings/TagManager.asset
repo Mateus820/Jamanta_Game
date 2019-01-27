@@ -6,7 +6,7 @@ TagManager:
   tags:
   - PlanetAtm
   - "Ch\xE3o"
-  - TiroInimigo
+  - EnemyShot
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - Parede
   - Bala
   - BalaIni
-  - 
+  - Player
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1030626755
+    locked: 0
+  - name: UI
+    uniqueID: 921907557
     locked: 0

@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerCode : MonoBehaviour
 {
     [SerializeField] private float speed;
-
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] private bool cutscene; //Remover serialize depois...
+
     private Vector2 keyInput;
 
-    void Start()
-    {
-       
+    void Start() {
+        cutscene = false;    
     }
 
     void Update()
@@ -25,6 +25,14 @@ public class PlayerCode : MonoBehaviour
     }
 
     void FixedUpdate() {
+        if(cutscene) return;
         rb.velocity = new Vector2(keyInput.x * speed, keyInput.y * speed);
+    }
+
+    public void CutSceneMode(){
+        cutscene = !cutscene;
+        
+        //Actions:
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }

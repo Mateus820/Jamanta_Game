@@ -6,14 +6,16 @@ public class PoolBala : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rb;
-    void Update()
+    void FixedUpdate()
     {
-         rb.velocity = Vector2.right * speed;
+         rb.velocity = Vector2.up * speed;
     }
      void OnCollisionEnter(Collision other) {
 
-         gameObject.SetActive(false);
-        
+         if (other.gameObject.CompareTag("Chão")){
+         this.gameObject.SetActive(false);
+         print("bateu");
+         }
     }
 }
 

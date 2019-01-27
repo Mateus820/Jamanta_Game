@@ -4,37 +4,22 @@ using UnityEngine;
 
 public class PlayerCode : MonoBehaviour
 {
-
     [SerializeField] private float speed;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Pool poolManager;
-    
-    [SerializeField] public int Hp;
-    public int hp {
-        get {
-            return this.hp;
-        }
-        set {
-            this.hp = value;
-        }
-    }
 
-
+    [SerializeField] Rigidbody2D rb;
     private Vector2 keyInput;
 
     void Start()
     {
-        Hp = 3;
+       
     }
 
     void Update()
     {
         keyInput.x = Input.GetAxisRaw("Horizontal");
-        // keyInput.y = Input.GetAxisRaw("Vertical");
+        keyInput.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Space")){
-            poolManager.GetObjectPooled(transform.position);
-        }
+       
     }
 
     void FixedUpdate() {
